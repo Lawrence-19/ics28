@@ -43,7 +43,7 @@ public class Register extends javax.swing.JFrame {
         BttnRecruit = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         Lpassword1 = new javax.swing.JLabel();
-        regbg = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,13 +130,13 @@ public class Register extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
-        jLabel4.setText("Not a slayer yet?");
-        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 130, -1));
+        jLabel4.setText("Already a Slayer?");
+        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 550, 130, -1));
 
         BttnRecruit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BttnRecruit.setForeground(new java.awt.Color(255, 255, 153));
-        BttnRecruit.setText("Become a Recruit");
-        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 110, -1));
+        BttnRecruit.setText("Login");
+        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, 50, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flame ", "Snow", "Beast", "Thunder", "Sun", "Insect", "Mist", "Water", "Wind", "Sound" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -151,9 +151,8 @@ public class Register extends javax.swing.JFrame {
         Lpassword1.setText("Password");
         Main.add(Lpassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, -1, -1));
 
-        regbg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/nezukobg.jpg"))); // NOI18N
-        regbg.setText("jLabel1");
-        Main.add(regbg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1020, 620));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/nezukobg.jpg"))); // NOI18N
+        Main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -233,13 +232,13 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JPanel Main;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField jPassfield;
     private javax.swing.JLabel line1;
     private javax.swing.JLabel line2;
     private javax.swing.JLabel line3;
-    private javax.swing.JLabel regbg;
     private javax.swing.JCheckBox showpass;
     private javax.swing.JTextField tuser;
     private javax.swing.JTextField tuser1;
