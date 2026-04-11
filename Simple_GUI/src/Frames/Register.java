@@ -138,6 +138,7 @@ public class Register extends javax.swing.JFrame {
         BttnRecruit.setText("Login");
         Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, 50, -1));
 
+        jComboBox1.setBackground(new java.awt.Color(51, 51, 51));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flame ", "Snow", "Beast", "Thunder", "Sun", "Insect", "Mist", "Water", "Wind", "Sound" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
