@@ -98,7 +98,7 @@ public class Login extends javax.swing.JFrame {
         Main.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 346, 137, -1));
 
         jButton1.setBackground(new java.awt.Color(229, 62, 23));
-        jButton1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(254, 250, 175));
         jButton1.setText("Login");
         Main.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 384, 330, 36));
