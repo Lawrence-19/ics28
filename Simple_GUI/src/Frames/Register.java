@@ -35,12 +35,13 @@ public class Register extends javax.swing.JFrame {
         jPassfield = new javax.swing.JPasswordField();
         line2 = new javax.swing.JLabel();
         showpass = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         BttnRecruit = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         Lpassword1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        Nezukobg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,7 +61,10 @@ public class Register extends javax.swing.JFrame {
         tuser.setBackground(new java.awt.Color(51, 51, 51));
         tuser.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         tuser.setForeground(new java.awt.Color(255, 255, 255));
-        tuser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tuser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tuser.setCaretColor(new java.awt.Color(51, 51, 51));
+        tuser.setOpaque(true);
+        tuser.setRequestFocusEnabled(false);
         tuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tuserActionPerformed(evt);
@@ -76,12 +80,12 @@ public class Register extends javax.swing.JFrame {
         Lemail.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         Lemail.setForeground(new java.awt.Color(252, 211, 2));
         Lemail.setText("Email");
-        Main.add(Lemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, -1, -1));
+        Main.add(Lemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 210, -1, -1));
 
         tuser1.setBackground(new java.awt.Color(51, 51, 51));
         tuser1.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         tuser1.setForeground(new java.awt.Color(255, 255, 255));
-        tuser1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tuser1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tuser1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tuser1ActionPerformed(evt);
@@ -102,7 +106,7 @@ public class Register extends javax.swing.JFrame {
         jPassfield.setBackground(new java.awt.Color(51, 51, 51));
         jPassfield.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jPassfield.setForeground(new java.awt.Color(255, 255, 255));
-        jPassfield.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPassfield.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPassfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPassfieldActionPerformed(evt);
@@ -115,7 +119,7 @@ public class Register extends javax.swing.JFrame {
         line2.setText("______________________________________________");
         Main.add(line2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, -1, -1));
 
-        showpass.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 12)); // NOI18N
+        showpass.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
         showpass.setForeground(new java.awt.Color(252, 211, 2));
         showpass.setText("Show Password");
         showpass.addActionListener(new java.awt.event.ActionListener() {
@@ -125,12 +129,6 @@ public class Register extends javax.swing.JFrame {
         });
         Main.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 137, -1));
 
-        jButton1.setBackground(new java.awt.Color(229, 62, 23));
-        jButton1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(254, 250, 175));
-        jButton1.setText("Enlist");
-        Main.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 330, 36));
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
         jLabel4.setText("Already a Slayer?");
@@ -139,7 +137,12 @@ public class Register extends javax.swing.JFrame {
         BttnRecruit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BttnRecruit.setForeground(new java.awt.Color(255, 255, 153));
         BttnRecruit.setText("Login");
-        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 530, 50, -1));
+        BttnRecruit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BttnRecruitMouseClicked(evt);
+            }
+        });
+        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 530, 50, -1));
 
         jComboBox1.setBackground(new java.awt.Color(51, 51, 51));
         jComboBox1.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
@@ -158,8 +161,26 @@ public class Register extends javax.swing.JFrame {
         Lpassword1.setText("Password");
         Main.add(Lpassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/nezukobg.jpg"))); // NOI18N
-        Main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
+        jLabel9.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel9.setText(" © 2026 Demon Slayer - All Rights Reserved");
+        Main.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(229, 62, 23));
+        jButton2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(254, 250, 175));
+        jButton2.setText("Enlist Now");
+        jButton2.setMaximumSize(new java.awt.Dimension(110, 40));
+        jButton2.setMinimumSize(new java.awt.Dimension(110, 40));
+        jButton2.setPreferredSize(new java.awt.Dimension(110, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        Main.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 330, 40));
+
+        Nezukobg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/nezukobg.jpg"))); // NOI18N
+        Main.add(Nezukobg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +215,16 @@ public class Register extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void BttnRecruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BttnRecruitMouseClicked
+        Login log = new Login();
+        log.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BttnRecruitMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,11 +268,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel Lpassword1;
     private javax.swing.JLabel Lusername2;
     private javax.swing.JPanel Main;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel Nezukobg;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPassfield;
     private javax.swing.JLabel line1;
     private javax.swing.JLabel line2;
