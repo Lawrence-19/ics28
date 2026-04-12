@@ -12,7 +12,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-    
+        setLocationRelativeTo(null); // para mag pop up ni nga jframe sa tunga kung I run
     
     }
 
@@ -106,12 +106,17 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
         jLabel4.setText("Not a slayer yet?");
-        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 460, 130, -1));
+        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 110, -1));
 
         BttnRecruit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BttnRecruit.setForeground(new java.awt.Color(255, 255, 153));
         BttnRecruit.setText("Become a Recruit");
-        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, -1));
+        BttnRecruit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BttnRecruitMouseClicked(evt);
+            }
+        });
+        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 110, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/tanjirobg.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -146,6 +151,12 @@ public class Login extends javax.swing.JFrame {
     private void tuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tuserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tuserActionPerformed
+
+    private void BttnRecruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BttnRecruitMouseClicked
+       Register reg = new Register();
+       reg.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_BttnRecruitMouseClicked
 
     /**
      * @param args the command line arguments
