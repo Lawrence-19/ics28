@@ -28,8 +28,6 @@ public class Dashboard extends javax.swing.JFrame {
         BttnUpdate = new javax.swing.JButton();
         BttnDelete = new javax.swing.JButton();
         BttnLogout = new javax.swing.JButton();
-        desktopright = new javax.swing.JDesktopPane();
-        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,7 +42,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setText("Welcome Back! The Corps awaits your next move");
 
         bttnCreate.setBackground(new java.awt.Color(153, 153, 255));
-        bttnCreate.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 18)); // NOI18N
+        bttnCreate.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 14)); // NOI18N
         bttnCreate.setForeground(new java.awt.Color(0, 0, 0));
         bttnCreate.setText("Create");
         bttnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         BttnRead.setBackground(new java.awt.Color(153, 153, 255));
-        BttnRead.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 18)); // NOI18N
+        BttnRead.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 14)); // NOI18N
         BttnRead.setForeground(new java.awt.Color(0, 0, 0));
         BttnRead.setText("Read");
         BttnRead.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +62,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         BttnUpdate.setBackground(new java.awt.Color(153, 153, 255));
-        BttnUpdate.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 18)); // NOI18N
+        BttnUpdate.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 14)); // NOI18N
         BttnUpdate.setForeground(new java.awt.Color(0, 0, 0));
         BttnUpdate.setText("Update");
         BttnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +72,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         BttnDelete.setBackground(new java.awt.Color(153, 153, 255));
-        BttnDelete.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 18)); // NOI18N
+        BttnDelete.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 14)); // NOI18N
         BttnDelete.setForeground(new java.awt.Color(0, 0, 0));
         BttnDelete.setText("Delete");
         BttnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -93,67 +91,44 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        desktopright.setBackground(new java.awt.Color(102, 102, 102));
-        desktopright.setPreferredSize(new java.awt.Dimension(500, 500));
-
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51, 180));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
-        desktopright.add(jPanel3);
-        jPanel3.setBounds(0, 0, 630, 440);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BttnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BttnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BttnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BttnRead, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bttnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(desktopright, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(111, 111, 111))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(BttnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BttnRead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BttnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BttnUpdate)
+                            .addComponent(bttnCreate))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(bttnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BttnRead, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BttnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BttnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BttnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(desktopright, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BttnRead)
+                    .addComponent(bttnCreate))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BttnUpdate)
+                    .addComponent(BttnDelete))
+                .addGap(73, 73, 73)
+                .addComponent(BttnLogout)
+                .addGap(19, 19, 19))
         );
 
         jPanel1.add(jPanel2);
@@ -244,11 +219,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton BttnRead;
     private javax.swing.JButton BttnUpdate;
     private javax.swing.JButton bttnCreate;
-    private javax.swing.JDesktopPane desktopright;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
