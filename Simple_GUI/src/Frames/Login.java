@@ -175,7 +175,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_BttnRecruitMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       Dashboard dash = new Dashboard();
+       dash.setVisible(true);
+       dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

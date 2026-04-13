@@ -40,7 +40,7 @@ public class Register extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         Lpassword1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        bttnenlist = new javax.swing.JButton();
         Nezukobg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,19 +165,19 @@ public class Register extends javax.swing.JFrame {
         jLabel9.setText(" © 2026 Demon Slayer - All Rights Reserved");
         Main.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(229, 62, 23));
-        jButton2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(254, 250, 175));
-        jButton2.setText("Enlist Now");
-        jButton2.setMaximumSize(new java.awt.Dimension(110, 40));
-        jButton2.setMinimumSize(new java.awt.Dimension(110, 40));
-        jButton2.setPreferredSize(new java.awt.Dimension(110, 40));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bttnenlist.setBackground(new java.awt.Color(229, 62, 23));
+        bttnenlist.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
+        bttnenlist.setForeground(new java.awt.Color(254, 250, 175));
+        bttnenlist.setText("Enlist Now");
+        bttnenlist.setMaximumSize(new java.awt.Dimension(110, 40));
+        bttnenlist.setMinimumSize(new java.awt.Dimension(110, 40));
+        bttnenlist.setPreferredSize(new java.awt.Dimension(110, 40));
+        bttnenlist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bttnenlistActionPerformed(evt);
             }
         });
-        Main.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 330, 40));
+        Main.add(bttnenlist, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 330, 40));
 
         Nezukobg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/nezukobg.jpg"))); // NOI18N
         Main.add(Nezukobg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
@@ -222,9 +222,11 @@ public class Register extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BttnRecruitMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void bttnenlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnenlistActionPerformed
+        Login log = new Login();
+        log.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_bttnenlistActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,7 +271,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel Lusername2;
     private javax.swing.JPanel Main;
     private javax.swing.JLabel Nezukobg;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton bttnenlist;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
