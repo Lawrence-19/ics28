@@ -48,22 +48,22 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 25)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(254, 250, 175));
         jLabel2.setText("Slayer Records Access");
-        Main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+        Main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, -1, -1));
 
         Lpassword.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         Lpassword.setForeground(new java.awt.Color(252, 211, 2));
         Lpassword.setText("Password");
-        Main.add(Lpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, -1, 30));
+        Main.add(Lpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, -1, 30));
 
         line2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         line2.setForeground(new java.awt.Color(255, 255, 255));
         line2.setText("______________________________________________");
-        Main.add(line2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, -1, -1));
+        Main.add(line2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, -1, -1));
 
         Lusername2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         Lusername2.setForeground(new java.awt.Color(252, 211, 2));
         Lusername2.setText("Username");
-        Main.add(Lusername2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, -1, -1));
+        Main.add(Lusername2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, -1));
 
         tuser.setBackground(new java.awt.Color(51, 51, 51));
         tuser.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,7 +73,7 @@ public class Login extends javax.swing.JFrame {
                 tuserActionPerformed(evt);
             }
         });
-        Main.add(tuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, 330, 40));
+        Main.add(tuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 330, 40));
 
         jPassfield.setBackground(new java.awt.Color(51, 51, 51));
         jPassfield.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,12 +84,12 @@ public class Login extends javax.swing.JFrame {
                 jPassfieldActionPerformed(evt);
             }
         });
-        Main.add(jPassfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, 330, 40));
+        Main.add(jPassfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 330, 40));
 
         line1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         line1.setForeground(new java.awt.Color(255, 255, 255));
         line1.setText("______________________________________________");
-        Main.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 210, -1, -1));
+        Main.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, -1, -1));
 
         showpass.setFont(new java.awt.Font("Rockwell", 1, 10)); // NOI18N
         showpass.setForeground(new java.awt.Color(252, 211, 2));
@@ -99,7 +99,7 @@ public class Login extends javax.swing.JFrame {
                 showpassActionPerformed(evt);
             }
         });
-        Main.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 137, -1));
+        Main.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 137, -1));
 
         jButton1.setBackground(new java.awt.Color(229, 62, 23));
         jButton1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
@@ -113,12 +113,12 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        Main.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 384, 330, 40));
+        Main.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 330, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
         jLabel4.setText("Not a slayer yet?");
-        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 110, -1));
+        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, 110, -1));
 
         BttnRecruit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BttnRecruit.setForeground(new java.awt.Color(255, 255, 153));
@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
                 BttnRecruitMouseClicked(evt);
             }
         });
-        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 110, -1));
+        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 470, 110, -1));
 
         jLabel9.setForeground(new java.awt.Color(204, 255, 255));
         jLabel9.setText(" © 2026 Demon Slayer - All Rights Reserved");

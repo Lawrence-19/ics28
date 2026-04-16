@@ -108,7 +108,7 @@ public class Register extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
         jLabel4.setText("Already a Slayer?");
-        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 110, -1));
+        Main.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, 110, -1));
 
         BttnRecruit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BttnRecruit.setForeground(new java.awt.Color(255, 255, 153));
@@ -118,7 +118,7 @@ public class Register extends javax.swing.JFrame {
                 BttnRecruitMouseClicked(evt);
             }
         });
-        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, 50, -1));
+        Main.add(BttnRecruit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 500, 50, -1));
 
         jComboBox1.setBackground(new java.awt.Color(51, 51, 51));
         jComboBox1.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
@@ -153,7 +153,7 @@ public class Register extends javax.swing.JFrame {
                 bttnenlistActionPerformed(evt);
             }
         });
-        Main.add(bttnenlist, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 330, 40));
+        Main.add(bttnenlist, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 330, 40));
 
         Nezukobg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Frames/nezukobg.jpg"))); // NOI18N
         Main.add(Nezukobg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
