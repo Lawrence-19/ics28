@@ -205,7 +205,7 @@ public class Register extends javax.swing.JFrame {
             pst.executeUpdate();
             
             //kung mahuman ug himo account
-            JOptionPane.showMessageDialog(this, "Welcome to the corps, " + newuser + "!\nYour " + newbrstyle + " stle has been recorded");
+            JOptionPane.showMessageDialog(this, "Welcome to the corps, " + newuser + "!\nYour " + newbrstyle + " breathing has been recorded");
             
             Login log = new Login();
             log.setVisible(true);
