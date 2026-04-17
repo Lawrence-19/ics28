@@ -8,9 +8,7 @@ import javax.swing.JOptionPane;
  */
 public class Register extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Register
-     */
+   
     public Register() {
         initComponents();
         setLocationRelativeTo(null); // para mag pop up ni nga jframe sa tunga kung I run
@@ -162,7 +160,11 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showpassActionPerformed
-        // TODO add your handling code here:
+       if(showpass.isSelected()){
+           jpassword.setEchoChar((char)0); //I reveal ang password
+       }else {
+           jpassword.setEchoChar('•');//Taguan ang password
+       }
     }//GEN-LAST:event_showpassActionPerformed
 
     private void BttnRecruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BttnRecruitMouseClicked
@@ -173,22 +175,56 @@ public class Register extends javax.swing.JFrame {
 
     private void bttnenlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnenlistActionPerformed
        
-        String user,pass, brstyle;
+        String newuser,newpass, newbrstyle;
         
-        user = txtusername.getText();
-        pass = new String(jpassword.getPassword()).trim();
-        brstyle = cmbreating.getSelectedItem().toString();
+        newuser = txtusername.getText();
+        newpass = new String(jpassword.getPassword()).trim();
+        newbrstyle = cmbreating.getSelectedItem().toString();
         
-        if (user.isEmpty() || pass.isEmpty()) {
+        if (newuser.isEmpty() || newpass.isEmpty()) {
             JOptionPane.showMessageDialog(this,
                     "The Corps requires a name and a secret pass!.",
                     "Entry Denied", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        Login log = new Login();
-        log.setVisible(true);
-        dispose();
+        try{
+            String url = "jdbc:mysql://localhost:3306/demon_slayer_db";
+            String user = "root"; // Deafault  ang sa XAMPP Username
+            String password = "";  // walay password sa XAMPP
+            
+            java.sql.Connection conn = java.sql.DriverManager.getConnection(url, user, password);
+            
+            String sql = "INSERT INTO users (username, password, breathing_style) VALUES (?, ?, ?)";
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            
+            pst.setString(1, newuser);
+            pst.setString(2, newpass);
+            pst.setString(3, newbrstyle);
+            
+            pst.executeUpdate();
+            
+            //kung mahuman ug himo account
+            JOptionPane.showMessageDialog(this, "Welcome to the corps, " + newuser + "!\nYour" + newbrstyle + "stle has been recorded");
+            
+            Login log = new Login();
+            log.setVisible(true);
+            dispose();
+            
+            conn.close();
+            
+        }catch(java.sql.SQLException e){
+            if (e.getErrorCode() == 1062) {
+                JOptionPane.showMessageDialog(this, "That Slayer name is already taken!", "Error" , JOptionPane.ERROR_MESSAGE);
+            
+            }else{
+                JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage());
+            }
+        }catch(Exception e) {
+                JOptionPane.showMessageDialog(this, "System Error: " + e.getMessage());
+        }
+        
+        
     }//GEN-LAST:event_bttnenlistActionPerformed
 
     private void cmbreatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbreatingActionPerformed
