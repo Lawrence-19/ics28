@@ -259,13 +259,46 @@ public class Dashboard extends javax.swing.JFrame {
                 conn.close();
             
         }catch (Exception e) {
-        
+             JOptionPane.showMessageDialog(this, "Update Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_BttnUpdateActionPerformed
 
     private void BttnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BttnDeleteActionPerformed
-        // TODO add your handling code here:
+        String user = txtusername.getText();
+        
+        if (user.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Select a slayer from the table first.");
+            return;
+        }
+        
+        int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this Slayer?", "Warning", JOptionPane.YES_NO_OPTION);
+        
+        if(confirm == JOptionPane.YES_OPTION) {
+            try{
+                String url = "jdbc:mysql://localhost/demon_slayer_db";
+                Connection conn = java.sql.DriverManager.getConnection(url, "root", "");
+                
+                
+                String sql = "DELETE FROM users WHERE username=?";
+                PreparedStatement pst = conn.prepareStatement(sql);
+                pst.setString(1, user);
+                
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Salyer removed from records");
+                
+                txtusername.setText("");
+                txtpassword.setText("");
+                showData();
+                txtusername.setEditable(true);
+                
+                conn.close();
+            }catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Delete Error" + e.getMessage());
+            }
+        }
+        
+        
     }//GEN-LAST:event_BttnDeleteActionPerformed
 
     private void BttnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BttnLogoutActionPerformed
