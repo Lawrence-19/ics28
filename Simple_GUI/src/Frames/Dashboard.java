@@ -4,14 +4,18 @@ package Frames;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-  
+import java.sql.PreparedStatement;
+
 public class Dashboard extends javax.swing.JFrame {
 
 
     public Dashboard() {
         initComponents();
         setLocationRelativeTo(null); 
+        showData();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -31,7 +35,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         LblUsername = new javax.swing.JLabel();
-        lblpass = new javax.swing.JTextField();
+        txtpassword = new javax.swing.JTextField();
         cmbreathing = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
@@ -76,9 +80,9 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        maintable.setBackground(new java.awt.Color(204, 204, 204));
+        maintable.setBackground(new java.awt.Color(204, 255, 255));
         maintable.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        maintable.setForeground(new java.awt.Color(255, 255, 255));
+        maintable.setForeground(new java.awt.Color(0, 0, 0));
         maintable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -101,6 +105,11 @@ public class Dashboard extends javax.swing.JFrame {
         maintable.setOpaque(false);
         maintable.setSelectionBackground(new java.awt.Color(32, 136, 203));
         maintable.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        maintable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                maintableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(maintable);
 
         txtusername.setBackground(new java.awt.Color(255, 255, 255));
@@ -122,9 +131,9 @@ public class Dashboard extends javax.swing.JFrame {
         LblUsername.setForeground(new java.awt.Color(238, 238, 238));
         LblUsername.setText("Username");
 
-        lblpass.setBackground(new java.awt.Color(255, 255, 255));
-        lblpass.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
-        lblpass.setForeground(new java.awt.Color(0, 0, 0));
+        txtpassword.setBackground(new java.awt.Color(255, 255, 255));
+        txtpassword.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        txtpassword.setForeground(new java.awt.Color(0, 0, 0));
 
         cmbreathing.setBackground(new java.awt.Color(204, 204, 204));
         cmbreathing.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
@@ -150,7 +159,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(LblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtusername, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
-                                .addComponent(lblpass, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                                .addComponent(txtpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                                 .addComponent(cmbreathing, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
@@ -187,7 +196,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblpass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -223,7 +232,36 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BttnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BttnUpdateActionPerformed
-        // TODO add your handling code here:
+        String user, pass, style;
+        
+        user = txtusername.getText();
+        pass = txtpassword.getText();
+        style = cmbreathing.getSelectedItem().toString();
+        
+        try {
+            String url = "jdbc:mysql://localhost/demon_slayer_db";
+            java.sql.Connection conn = java.sql.DriverManager.getConnection(url, "root", "");
+            
+            
+            String sql ="UPDATE users SET password=?, breathing_style=? WHERE username=?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            
+            pst.setString(1, pass);
+            pst.setString(2, style);
+            pst.setString(3, user);
+            
+            int updated = pst.executeUpdate();
+            if (updated > 0) {
+                JOptionPane.showMessageDialog(this, "Slayer Record Updated!");
+                showData(); // I refresh ang table 
+                txtusername.setEditable(true); // para magamit sa sunod
+            }
+                conn.close();
+            
+        }catch (Exception e) {
+        
+        }
+        
     }//GEN-LAST:event_BttnUpdateActionPerformed
 
     private void BttnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BttnDeleteActionPerformed
@@ -239,6 +277,18 @@ public class Dashboard extends javax.swing.JFrame {
     private void cmbreathingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbreathingActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbreathingActionPerformed
+
+    private void maintableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maintableMouseClicked
+        DefaultTableModel model = (DefaultTableModel) maintable.getModel();
+        int i = maintable.getSelectedRow();
+        
+        txtusername.setText(model.getValueAt(i, 0).toString());
+        txtpassword.setText(model.getValueAt(i, 1).toString());
+        cmbreathing.setSelectedItem(model.getValueAt(i, 2).toString());
+        
+        //I disable and username during pag edit para dili ma change ang ID
+        txtusername.setEditable(false);
+    }//GEN-LAST:event_maintableMouseClicked
     
     public void showData(){
         try{
@@ -270,8 +320,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
             conn.close();
             
-        }catch{
-        
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Error loading data:" + e.getMessage());
         }
     }
     
@@ -325,8 +375,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblheader;
-    private javax.swing.JTextField lblpass;
     private javax.swing.JTable maintable;
+    private javax.swing.JTextField txtpassword;
     private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }
