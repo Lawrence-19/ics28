@@ -302,9 +302,14 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_BttnDeleteActionPerformed
 
     private void BttnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BttnLogoutActionPerformed
+        int option = JOptionPane.showConfirmDialog(this, "Are you sure?", "Logout", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (option == JOptionPane.YES_OPTION) {
+         //mobalik sa login nga jframe
         Login log = new Login();
         log.setVisible(true);
         dispose();
+        }
     }//GEN-LAST:event_BttnLogoutActionPerformed
 
     private void cmbreathingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbreathingActionPerformed
