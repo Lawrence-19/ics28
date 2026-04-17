@@ -45,10 +45,10 @@ public class Register extends javax.swing.JFrame {
         Main.setBackground(new java.awt.Color(252, 248, 248));
         Main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 25)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 28)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(254, 250, 175));
         jLabel2.setText("Join The Corps");
-        Main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, -1, -1));
+        Main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 50, -1, -1));
 
         Lusername2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         Lusername2.setForeground(new java.awt.Color(252, 211, 2));

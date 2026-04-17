@@ -45,10 +45,10 @@ public class Login extends javax.swing.JFrame {
         Main.setBackground(new java.awt.Color(255, 255, 255));
         Main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 25)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 28)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(254, 250, 175));
         jLabel2.setText("Slayer Records Access");
-        Main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, -1, -1));
+        Main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
         Lpassword.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         Lpassword.setForeground(new java.awt.Color(252, 211, 2));
@@ -91,7 +91,7 @@ public class Login extends javax.swing.JFrame {
         line1.setText("______________________________________________");
         Main.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, -1, -1));
 
-        showpass.setFont(new java.awt.Font("Rockwell", 1, 10)); // NOI18N
+        showpass.setFont(new java.awt.Font("Rockwell", 1, 12)); // NOI18N
         showpass.setForeground(new java.awt.Color(252, 211, 2));
         showpass.setText("Show Password");
         showpass.addActionListener(new java.awt.event.ActionListener() {
