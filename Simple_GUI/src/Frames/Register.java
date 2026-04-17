@@ -189,7 +189,7 @@ public class Register extends javax.swing.JFrame {
         }
         
         try{
-            String url = "jdbc:mysql://localhost:3306/demon_slayer_db";
+            String url = "jdbc:mysql://localhost/demon_slayer_db";
             String user = "root"; // Deafault  ang sa XAMPP Username
             String password = "";  // walay password sa XAMPP
             
