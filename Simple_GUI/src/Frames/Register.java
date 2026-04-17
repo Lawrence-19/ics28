@@ -173,16 +173,16 @@ public class Register extends javax.swing.JFrame {
 
     private void bttnenlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnenlistActionPerformed
        
-        String newusername,newpassword, newbreathStyle;
+        String user,pass, brstyle;
         
-        newusername = txtusername.getText();
-        newpassword = new String(jpassword.getPassword()).trim();
-        newbreathStyle = cmbreating.getSelectedItem().toString();
+        user = txtusername.getText();
+        pass = new String(jpassword.getPassword()).trim();
+        brstyle = cmbreating.getSelectedItem().toString();
         
-        if (newusername.isEmpty() || newpassword.isEmpty()) {
+        if (user.isEmpty() || pass.isEmpty()) {
             JOptionPane.showMessageDialog(this,
-                    "Please enter all fields.",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                    "The Corps requires a name and a secret pass!.",
+                    "Entry Denied", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
