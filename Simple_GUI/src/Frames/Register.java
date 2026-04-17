@@ -163,7 +163,7 @@ public class Register extends javax.swing.JFrame {
        if(showpass.isSelected()){
            jpassword.setEchoChar((char)0); //I reveal ang password
        }else {
-           jpassword.setEchoChar('•');//Taguan ang password
+           jpassword.setEchoChar('*');//Taguan ang password
        }
     }//GEN-LAST:event_showpassActionPerformed
 
@@ -190,7 +190,7 @@ public class Register extends javax.swing.JFrame {
         
         try{
             String url = "jdbc:mysql://localhost/demon_slayer_db";
-            String user = "root"; // Deafault  ang sa XAMPP Username
+            String user = "root"; // Deafault ang sa XAMPP Username
             String password = "";  // walay password sa XAMPP
             
             java.sql.Connection conn = java.sql.DriverManager.getConnection(url, user, password);

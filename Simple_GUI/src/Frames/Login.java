@@ -27,11 +27,11 @@ public class Login extends javax.swing.JFrame {
         Lpassword = new javax.swing.JLabel();
         line2 = new javax.swing.JLabel();
         Lusername2 = new javax.swing.JLabel();
-        tuser = new javax.swing.JTextField();
-        jPassfield = new javax.swing.JPasswordField();
+        txtusername = new javax.swing.JTextField();
+        jpassword = new javax.swing.JPasswordField();
         line1 = new javax.swing.JLabel();
         showpass = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        bttnlogin = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         BttnRecruit = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -65,26 +65,26 @@ public class Login extends javax.swing.JFrame {
         Lusername2.setText("Username");
         Main.add(Lusername2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, -1));
 
-        tuser.setBackground(new java.awt.Color(51, 51, 51));
-        tuser.setForeground(new java.awt.Color(255, 255, 255));
-        tuser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tuser.addActionListener(new java.awt.event.ActionListener() {
+        txtusername.setBackground(new java.awt.Color(51, 51, 51));
+        txtusername.setForeground(new java.awt.Color(255, 255, 255));
+        txtusername.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tuserActionPerformed(evt);
+                txtusernameActionPerformed(evt);
             }
         });
-        Main.add(tuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 330, 40));
+        Main.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 330, 40));
 
-        jPassfield.setBackground(new java.awt.Color(51, 51, 51));
-        jPassfield.setForeground(new java.awt.Color(255, 255, 255));
-        jPassfield.setToolTipText("");
-        jPassfield.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPassfield.addActionListener(new java.awt.event.ActionListener() {
+        jpassword.setBackground(new java.awt.Color(51, 51, 51));
+        jpassword.setForeground(new java.awt.Color(255, 255, 255));
+        jpassword.setToolTipText("");
+        jpassword.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPassfieldActionPerformed(evt);
+                jpasswordActionPerformed(evt);
             }
         });
-        Main.add(jPassfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 330, 40));
+        Main.add(jpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 330, 40));
 
         line1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         line1.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,19 +101,19 @@ public class Login extends javax.swing.JFrame {
         });
         Main.add(showpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 137, -1));
 
-        jButton1.setBackground(new java.awt.Color(229, 62, 23));
-        jButton1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(254, 250, 175));
-        jButton1.setText("Login");
-        jButton1.setMaximumSize(new java.awt.Dimension(110, 40));
-        jButton1.setMinimumSize(new java.awt.Dimension(110, 40));
-        jButton1.setPreferredSize(new java.awt.Dimension(110, 40));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bttnlogin.setBackground(new java.awt.Color(229, 62, 23));
+        bttnlogin.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 21)); // NOI18N
+        bttnlogin.setForeground(new java.awt.Color(254, 250, 175));
+        bttnlogin.setText("Login");
+        bttnlogin.setMaximumSize(new java.awt.Dimension(110, 40));
+        bttnlogin.setMinimumSize(new java.awt.Dimension(110, 40));
+        bttnlogin.setPreferredSize(new java.awt.Dimension(110, 40));
+        bttnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bttnloginActionPerformed(evt);
             }
         });
-        Main.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 330, 40));
+        Main.add(bttnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 330, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 153));
@@ -156,17 +156,21 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPassfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPassfieldActionPerformed
+    private void jpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPassfieldActionPerformed
+    }//GEN-LAST:event_jpasswordActionPerformed
 
     private void showpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showpassActionPerformed
-        // TODO add your handling code here:
+        if(showpass.isSelected()){
+           jpassword.setEchoChar((char)0); //I reveal ang password
+       }else {
+           jpassword.setEchoChar('*');//Taguan ang password
+       }
     }//GEN-LAST:event_showpassActionPerformed
 
-    private void tuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tuserActionPerformed
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tuserActionPerformed
+    }//GEN-LAST:event_txtusernameActionPerformed
 
     private void BttnRecruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BttnRecruitMouseClicked
        Register reg = new Register();
@@ -174,11 +178,11 @@ public class Login extends javax.swing.JFrame {
        dispose();
     }//GEN-LAST:event_BttnRecruitMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bttnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnloginActionPerformed
        Dashboard dash = new Dashboard();
        dash.setVisible(true);
        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bttnloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,16 +224,16 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Lpassword;
     private javax.swing.JLabel Lusername2;
     private javax.swing.JPanel Main;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bttnlogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPassfield;
+    private javax.swing.JPasswordField jpassword;
     private javax.swing.JLabel line1;
     private javax.swing.JLabel line2;
     private javax.swing.JCheckBox showpass;
-    private javax.swing.JTextField tuser;
+    private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }
