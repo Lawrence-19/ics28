@@ -1,6 +1,11 @@
 
 package Frames;
 
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
+  
 public class Dashboard extends javax.swing.JFrame {
 
 
@@ -234,7 +239,42 @@ public class Dashboard extends javax.swing.JFrame {
     private void cmbreathingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbreathingActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbreathingActionPerformed
+    
+    public void showData(){
+        try{
+            //I setup and connection sa database
+            String url = "jdbc:mysql://localhost/demon_slayer_db";
+            java.sql.Connection conn = java.sql.DriverManager.getConnection(url, "root", "");
 
+            //Iandam ang table model
+            DefaultTableModel model = (DefaultTableModel) maintable.getModel();
+            model.setRowCount(0);
+            
+            //execution sa query
+            String sql = "SELECT username, password, breathing_style FROM users";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            
+            //mag loop sa database result dayun I add sa main table
+            while (rs.next()) {
+                String user, pass, style;
+                
+                user = rs.getString("username");
+                pass = rs.getString("password");
+                style = rs.getString("breathing_style");
+                
+                //Idugang ang data as new row sa main table
+                Object[] row = {user, pass, style};
+                model.addRow(row);
+            }
+            conn.close();
+            
+        }catch{
+        
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
