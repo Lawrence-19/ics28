@@ -195,7 +195,7 @@ public class Login extends javax.swing.JFrame {
             String url = "jdbc:mysql://localhost/demon_slayer_db";
             java.sql.Connection conn = java.sql.DriverManager.getConnection(url, "root", "");
 
-            String sql = "SELECT * FROM users Where username=? AND passwords=?";
+            String sql = "SELECT * FROM users Where username=? AND password=?";
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, user);
             pst.setString(2, pass);
