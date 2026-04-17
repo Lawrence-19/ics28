@@ -1,6 +1,8 @@
 
 package Frames;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ADMIN
@@ -179,9 +181,43 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_BttnRecruitMouseClicked
 
     private void bttnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnloginActionPerformed
-       Dashboard dash = new Dashboard();
-       dash.setVisible(true);
-       dispose();
+       String user = txtusername.getText().trim();
+       String pass = new String(jpassword.getPassword()).trim();
+       
+        if (user.isEmpty() || pass.isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Please enter your username and password!.",
+                    "Login Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+       
+        try{
+            String url = "jdbc:mysql://localhost/demon_slayer_db";
+            java.sql.Connection conn = java.sql.DriverManager.getConnection(url, "root", "");
+
+            String sql = "SELECT * FROM users Where username=? AND passwords=?";
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, user);
+            pst.setString(2, pass);
+            
+            java.sql.ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()) {
+                //kung makita ang account
+                JOptionPane.showMessageDialog(this , "Access Granted. Welcome, " + user);
+                
+                Dashboard dash = new Dashboard();
+                dash.setVisible(true);
+                this.dispose();
+            }else {
+                //kung wala nakita ang account
+                JOptionPane.showMessageDialog(this, "Incorrect password", "Login Failed", JOptionPane.ERROR_MESSAGE);
+            }
+            conn.close();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error reading users file", "Error", JOptionPane.ERROR_MESSAGE);
+        } 
     }//GEN-LAST:event_bttnloginActionPerformed
 
     /**
